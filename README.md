@@ -218,6 +218,12 @@ We benchmarked **14 representative RNA tertiary structure prediction models** sp
 | **Template/Fragment-Driven** | RNAComposer, 3dRNA v2.0, FARFAR2, VFold | Structural database integration, MSA coevolution, fragment libraries | Knowledge-guided construction using evolutionary signals |
 | **Deep Learning-Based** | DRfold, DRfold2, RhoFold, RoseTTAFold2NA, trRosettaRNA, DeepFoldRNA, AlphaFold3, NuFold | RNA transformers, cross-modal architectures, EvoFormer modules | Neural network prediction of complex long-range interactions |
 
+Most models can be installed locally within a few minutes using standard Linux environments, as they primarily depend on Python packages and moderate external libraries. Classical statistical and fragment-based approaches (e.g., SimRNA, RNAJP, RNAComposer, 3dRNA v2.0) generally require modest computational resources and minimal external databases.
+
+In contrast, several deep learning–based frameworks require substantial additional resources. Methods that rely on multiple sequence alignment (MSA) generation and large evolutionary databases (e.g., DeepFoldRNA, RoseTTAFold2NA) require downloading large sequence databases, which may take several hours depending on network bandwidth and can require approximately 2-3 terabytes of disk storage. GPU acceleration (≥16 GB VRAM recommended) is typically necessary for efficient inference with these models. Accordingly, the full reproduction of all 14 prediction pipelines may require high-performance computing infrastructure.
+
+To ensure fair benchmarking, each model was executed using its officially recommended configuration and default parameters whenever possible.
+
 ### 4.2 Model Details
 
 #### **4.2.1 Statistical Potential & Ab Initio Methods**
